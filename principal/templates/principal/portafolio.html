@@ -1,0 +1,28 @@
+{% extends 'principal/pagina_principal.html'%}
+{% load static %}
+{% block content %}
+
+<div class="">
+    <h2>Mis Dibujos</h2>
+</div>
+
+{% for m_d in mostrar_dibujos %}
+
+
+<div class="card" style="width: 18rem;">
+    <a class="navbar-brand" onclick="window.location='/dibujo/{{ m_d.id }}'" style="cursor: pointer">
+        <img src="{{m_d.dibujo.url}}" width="280px" height="280px" alt="">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">{{m_d.Anime}}</h5>
+        <h5 class="card-title">{{m_d.Nombre}}</h5>
+        <p class="card-text">{{m_d.contenido}}</p>
+        <p class="card-text">{{m_d.created}}</p>
+    </div>
+</div>
+
+
+{% endfor %}
+
+</div>
+{% endblock %}

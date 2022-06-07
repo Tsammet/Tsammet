@@ -1,0 +1,12 @@
+{% extends 'principal/pagina_principal.html'%}
+{% load static %}
+{% block content %}
+
+<h1>DIBUJO</h1>
+
+
+  <form method="POST" action="{% url 'dibujo_id' dibujo.id %}">
+  {% csrf_token %}
+
+{% endblock %}
+          
