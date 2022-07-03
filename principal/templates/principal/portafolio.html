@@ -6,6 +6,19 @@
     <h2>Mis Dibujos</h2>
 </div>
 
+<form method="POST" >
+      
+{% csrf_token %}
+
+<div class="input-group">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" placeholder="Buscar" name="buscar"/>
+    </div>
+        <button type="submit" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
+</div>
+
 {% for m_d in mostrar_dibujos %}
 
 
@@ -23,6 +36,21 @@
 
 
 {% endfor %}
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+    {% if mostrar_dibujos.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ mostrar_dibujos.previous_page_number }} ">Previous</a></li>
+    {% endif %}
+
+    
+    {% if mostrar_dibujos.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ mostrar_dibujos.next_page_number }} ">Next</a></li>
+    {% endif %}
+    </ul>
+</nav>
+
 
 </div>
 {% endblock %}

@@ -7,3 +7,4 @@ class dibujosAdmin(admin.ModelAdmin):
     readonly_fields=("created", 'updated')
 
 admin.site.register(dibujos, dibujosAdmin)
+

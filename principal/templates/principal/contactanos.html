@@ -1,0 +1,34 @@
+{% extends 'principal/pagina_principal.html'%}
+{% load static %}
+{% block content %}
+
+CONTACTAME CARE VERGA
+
+<form method="POST" action="{% url 'contactanos' %}">
+    {% csrf_token %}
+    
+        <H2>Registro Cliente</H2>
+    
+        <div class="form-letter-r">
+          <label class="xxx" for="nombres">Nombre:</label>
+          <input type="text" class="form-control" placeholder="Name" name="nombres">
+        </div>
+
+        <div class="form-letter">
+          <label class="xxx" for="apellidos">Email:</label>
+          <input type="Email" class="form-control" placeholder="Email" name="email">
+        </div>
+
+        <div class="form-letter">
+          <label class="xxx" for="cedula">Titulo:</label>
+          <input type="text" class="form-control" placeholder="Titulo" name="titulo">
+        </div>
+
+        <div class="form-letter">
+          <label class="xxx" for="cedula">Contenido:</label>
+          <input type="text" class="form-control" placeholder="Contenido" name="contenido">
+        </div>
+
+        <input class="boton-ingreso" type="submit" name="submit"  value="submit">
+
+{% endblock %}

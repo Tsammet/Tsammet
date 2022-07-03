@@ -5,8 +5,21 @@
 <h1>DIBUJO</h1>
 
 
-  <form method="POST" action="{% url 'dibujo_id' dibujo.id %}">
-  {% csrf_token %}
+<form method="POST" action="{% url 'dibujo_id' dibujo.id %}">
+{% csrf_token %}
+
+{% for d in dib %}
+
+    <img src="{{d.dibujo.url}}">
+    <h5>{{d.Nombre}}</h5>
+
+    {% if d.link_video %}
+
+      <p>VIDEO DEMOSTRACIÓN</p>
+      <a href="{{d.link_video}}" target="_blank" rel="noopener noreferrer">{{d.link_video}}"</a>
+    {% endif %}
+
+{% endfor %}
 
 {% endblock %}
           
